@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 function SectionHead({
   eyebrow,
   title,
-  sub,
+  sub="",
 }) {
   return (
     <motion.div

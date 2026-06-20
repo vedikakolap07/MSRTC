@@ -1,6 +1,24 @@
 import { Bus } from "lucide-react";
+import { useLang } from "../context/LangContext";
+
+const footerData = {
+  en: {
+    services: "Services",
+    company: "About MSRTC",
+    quick: "Quick Links",
+    support: "Support",
+  },
+  mr: {
+    services: "सेवा",
+    company: "एमएसआरटीसी बद्दल",
+    quick: "द्रुत दुवे",
+    support: "सहाय्य",
+  },
+};
 
 export default function Footer() {
+  const { lang } = useLang();
+  const tx = footerData[lang];
   return (
     <footer className="border-t border-border bg-background">
       <div className="mx-auto max-w-7xl px-6 py-24">
@@ -23,7 +41,7 @@ export default function Footer() {
           {/* Travel */}
           <div>
             <h3 className="text-xs uppercase tracking-[0.25em] text-ink-soft mb-6">
-              Travel
+           {tx.services}
             </h3>
 
             <ul className="space-y-4 text-foreground">
@@ -37,7 +55,7 @@ export default function Footer() {
           {/* Company */}
           <div>
             <h3 className="text-xs uppercase tracking-[0.25em] text-ink-soft mb-6">
-              Company
+            {tx.company}
             </h3>
 
             <ul className="space-y-4 text-foreground">
@@ -53,7 +71,7 @@ export default function Footer() {
           {/* Support */}
           <div>
             <h3 className="text-xs uppercase tracking-[0.25em] text-ink-soft mb-6">
-              Support
+              {tx.support}
             </h3>
 
             <ul className="space-y-4 text-foreground">
